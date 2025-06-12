@@ -32,6 +32,10 @@ Une fois le code TypeScript écrit, on peut le compiler en JavaScript à l'aide 
 ```bash
 npx tsc my-file.ts
 ```
+On peut également personnaliser la version JavaScript générée en utilisant l’option `--target`. Par exemple, pour compiler le code en ciblant ECMAScript 6 :
+```bash
+npx tsc my-file.ts --target es6
+```
 
 ### À propos
 Ce projet a été réalisé dans le cadre du cours interactif *“Learn TypeScript”* proposé par [Scrimba](https://scrimba.com/), une plateforme d’apprentissage en ligne axée sur la pratique.
@@ -69,6 +73,10 @@ By the end of this project, you will be able to:
 Once the TypeScript code is written, you can compile it into JavaScript using the following command: 
 ```bash
 npx tsc my-file.ts
+```
+We can also customize the output JavaScript version using the `--target` option. For example, to compile the code targeting ECMAScript 6:
+```bash
+npx tsc my-file.ts --target es6
 ```
 
 ### About 
