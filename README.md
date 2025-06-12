@@ -27,6 +27,12 @@ Au fil du projet, vous explorerez les notions suivantes :
 - Appliquer les types utilitaires pour gagner en flexibilité.
 - Déboguer plus facilement grâce au typage statique.
 
+### Compilation
+Une fois le code TypeScript écrit, on peut le compiler en JavaScript à l'aide de la commande suivante :
+```bash
+`npx tsc my-file.ts`
+```
+
 ### À propos
 Ce projet a été réalisé dans le cadre du cours interactif *“Learn TypeScript”* proposé par [Scrimba](https://scrimba.com/), une plateforme d’apprentissage en ligne axée sur la pratique.
 
@@ -58,6 +64,12 @@ By the end of this project, you will be able to:
 - Improve function robustness using return type annotations
 - Apply utility types for greater flexibility
 - Debug more effectively using static typing
+
+### Compliation 
+Once the TypeScript code is written, you can compile it into JavaScript using the following command: 
+```bash
+`npx tsc my-file.ts`
+```
 
 ### About 
 This project was created as part of the interactive course *“Learn TypeScript”* offered by [Scrimba](https://scrimba.com/), an online learning platform focused on hands-on practice.
