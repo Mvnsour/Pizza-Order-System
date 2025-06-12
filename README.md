@@ -30,7 +30,7 @@ Au fil du projet, vous explorerez les notions suivantes :
 ### Compilation
 Une fois le code TypeScript écrit, on peut le compiler en JavaScript à l'aide de la commande suivante :
 ```bash
-`npx tsc my-file.ts`
+npx tsc my-file.ts
 ```
 
 ### À propos
@@ -68,7 +68,7 @@ By the end of this project, you will be able to:
 ### Compliation 
 Once the TypeScript code is written, you can compile it into JavaScript using the following command: 
 ```bash
-`npx tsc my-file.ts`
+npx tsc my-file.ts
 ```
 
 ### About 
