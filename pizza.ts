@@ -1,4 +1,5 @@
 type Pizza = {
+  id: number;
   name: string;
   price: number;
 }
@@ -6,15 +7,15 @@ type Pizza = {
 type Order = {
   id: number;
   pizza: Pizza;
-  status: string; // "ordered" or "completed"
+  status: "ordered" | "completed";
 }
 
-const menu = [
-  { name : "Margherita", price: 8 },
-  { name : "Salmon", price: 15 },
-  { name : "4 Cheeses", price: 14 },
-  { name : "Oriental", price: 13 },
-  { name : "Parisian", price: 10 },
+const menu: Pizza[] = [
+  { id: 1, name : "Margherita", price: 8 },
+  { id: 2, name : "Salmon", price: 15 },
+  { id: 3, name : "4 Cheeses", price: 14 },
+  { id: 4, name : "Oriental", price: 13 },
+  { id: 5, name : "Parisian", price: 10 },
 ]
 
 let cashInRegister: number = 100;
@@ -32,7 +33,7 @@ function placeOrder(pizzaName: string) {
     return;
   }
   cashInRegister+= selectedPizza.price;
-  const newOrder = { id: nextOrderId++ ,pizza: selectedPizza, status: "ordered" };
+  const newOrder: Order = { id: nextOrderId++ ,pizza: selectedPizza, status: "ordered" };
   orderQueue.push(newOrder);
   return newOrder
 }
@@ -47,9 +48,19 @@ function completeOrder(orderId: number) {
   return order;
 }
 
-addNewPizza({ name: "Chicken Bacon Ranch", price: 12 })
-addNewPizza({ name: "BBQ Chicken", price: 12 })
-addNewPizza({ name: "Spicy Sausage", price: 11 })
+function getPizzaDetail(identifier: number | string) {
+  if (typeof identifier === "number") {
+    return menu.find(pizza => pizza.id === identifier);
+  } else if (typeof identifier === "string") {
+    return menu.find(pizza => pizza.name.toLowerCase() === identifier.toLowerCase());
+  } else {
+    throw new TypeError(`${identifier} must be a number or a string`);
+  }
+}
+
+addNewPizza({ id: 6, name: "Chicken Bacon Ranch", price: 12 })
+addNewPizza({ id: 7, name: "Hawaiian", price: 12 })
+addNewPizza({ id: 8, name: "Spicy Sausage", price: 11 })
 
 placeOrder("Chicken Bacon Ranch")
 completeOrder(1)

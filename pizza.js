@@ -1,9 +1,9 @@
 const menu = [
-    { name: "Margherita", price: 8 },
-    { name: "Salmon", price: 15 },
-    { name: "4 Cheeses", price: 14 },
-    { name: "Oriental", price: 13 },
-    { name: "Parisian", price: 10 },
+    { id: 1, name: "Margherita", price: 8 },
+    { id: 2, name: "Salmon", price: 15 },
+    { id: 3, name: "4 Cheeses", price: 14 },
+    { id: 4, name: "Oriental", price: 13 },
+    { id: 5, name: "Parisian", price: 10 },
 ];
 let cashInRegister = 100;
 let nextOrderId = 1;
@@ -31,9 +31,20 @@ function completeOrder(orderId) {
     order.status = "completed";
     return order;
 }
-addNewPizza({ name: "Chicken Bacon Ranch", price: 12 });
-addNewPizza({ name: "BBQ Chicken", price: 12 });
-addNewPizza({ name: "Spicy Sausage", price: 11 });
+function getPizzaDetail(identifier) {
+    if (typeof identifier === "number") {
+        return menu.find(pizza => pizza.id === identifier);
+    }
+    else if (typeof identifier === "string") {
+        return menu.find(pizza => pizza.name.toLowerCase() === identifier.toLowerCase());
+    }
+    else {
+        throw new TypeError(`${identifier} must be a number or a string`);
+    }
+}
+addNewPizza({ id: 6, name: "Chicken Bacon Ranch", price: 12 });
+addNewPizza({ id: 7, name: "Hawaiian", price: 12 });
+addNewPizza({ id: 8, name: "Spicy Sausage", price: 11 });
 placeOrder("Chicken Bacon Ranch");
 completeOrder(1);
 console.log("Menu:", menu);
