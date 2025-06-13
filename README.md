@@ -30,11 +30,11 @@ Au fil du projet, vous explorerez les notions suivantes :
 ### Compilation
 Une fois le code TypeScript écrit, on peut le compiler en JavaScript à l'aide de la commande suivante :
 ```bash
-npx tsc my-file.ts
+npx tsc pizza.ts
 ```
 On peut également personnaliser la version JavaScript générée en utilisant l’option `--target`. Par exemple, pour compiler le code en ciblant ECMAScript 6 :
 ```bash
-npx tsc my-file.ts --target es6
+npx tsc pizza.ts --target es6
 ```
 
 ### À propos
