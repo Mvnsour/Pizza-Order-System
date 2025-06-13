@@ -26,7 +26,7 @@ function addNewPizza(pizza: Pizza) {
   menu.push(pizza);
 }
 
-function placeOrder(pizzaName: string) {
+function placeOrder(pizzaName: string) : Order | undefined { // added return type for clarity
   const selectedPizza = menu.find(pizza => pizza.name === pizzaName);
   if (!selectedPizza) {
     console.error(`${pizzaName} does not exist in the menu`)
@@ -38,7 +38,7 @@ function placeOrder(pizzaName: string) {
   return newOrder
 }
 
-function completeOrder(orderId: number) {
+function completeOrder(orderId: number) : Order | undefined {
   const order = orderQueue.find(order => order.id === orderId);
   if (!order) {
     console.error(`Order with ID ${orderId} does not exist`);
@@ -48,7 +48,7 @@ function completeOrder(orderId: number) {
   return order;
 }
 
-function getPizzaDetail(identifier: number | string) {
+function getPizzaDetail(identifier: number | string) : Pizza | undefined {
   if (typeof identifier === "number") {
     return menu.find(pizza => pizza.id === identifier);
   } else if (typeof identifier === "string") {
