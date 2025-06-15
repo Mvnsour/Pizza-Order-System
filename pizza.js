@@ -1,15 +1,17 @@
-const menu = [
-    { id: 1, name: "Margherita", price: 8 },
-    { id: 2, name: "Salmon", price: 15 },
-    { id: 3, name: "4 Cheeses", price: 14 },
-    { id: 4, name: "Oriental", price: 13 },
-    { id: 5, name: "Parisian", price: 10 },
-];
+let nextPizzaId = 1;
 let cashInRegister = 100;
 let nextOrderId = 1;
+const menu = [
+    { id: nextPizzaId++, name: "Margherita", price: 8 },
+    { id: nextPizzaId++, name: "Salmon", price: 15 },
+    { id: nextPizzaId++, name: "4 Cheeses", price: 14 },
+    { id: nextPizzaId++, name: "Oriental", price: 13 },
+    { id: nextPizzaId++, name: "Parisian", price: 10 },
+];
 const orderQueue = [];
 function addNewPizza(pizza) {
-    menu.push(pizza);
+    pizza.id = nextPizzaId++;
+    menu.unshift(pizza);
 }
 function placeOrder(pizzaName) {
     const selectedPizza = menu.find(pizza => pizza.name === pizzaName);
@@ -42,11 +44,39 @@ function getPizzaDetail(identifier) {
         throw new TypeError(`${identifier} must be a number or a string`);
     }
 }
-addNewPizza({ id: 6, name: "Chicken Bacon Ranch", price: 12 });
-addNewPizza({ id: 7, name: "Hawaiian", price: 12 });
-addNewPizza({ id: 8, name: "Spicy Sausage", price: 11 });
-placeOrder("Chicken Bacon Ranch");
-completeOrder(1);
+addNewPizza({ name: "Chicken Bacon Ranch", price: 12 });
+addNewPizza({ name: "Queen", price: 13 });
+// completeOrder(1)
 console.log("Menu:", menu);
 console.log("Cash in register:", cashInRegister);
 console.log("Order queue:", orderQueue);
+let id = 1;
+const users = [{
+        id: id,
+        username: "marcus",
+        role: "admin"
+    }, {
+        id: id++,
+        username: "tim",
+        role: "user"
+    }, {
+        id: id++,
+        username: "tom",
+        role: "guest"
+    }];
+function updateUser(id, updates) {
+    const foundUser = users.find(user => user.id === id);
+    if (!foundUser) {
+        console.error("User not found");
+        return;
+    }
+    Object.assign(foundUser, updates);
+}
+updateUser(id++, { username: "Ibrahim" });
+updateUser(id++, { role: "admin" });
+console.log("Users after update:", users);
+function addUser(user) {
+    users.push(user);
+}
+addUser({ id: id++, username: "newUser", role: "user" });
+console.log("Users before adding new user:", users);

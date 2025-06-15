@@ -10,20 +10,23 @@ type Order = {
   status: "ordered" | "completed";
 }
 
-const menu: Pizza[] = [
-  { id: 1, name : "Margherita", price: 8 },
-  { id: 2, name : "Salmon", price: 15 },
-  { id: 3, name : "4 Cheeses", price: 14 },
-  { id: 4, name : "Oriental", price: 13 },
-  { id: 5, name : "Parisian", price: 10 },
-]
-
+let nextPizzaId: number = 1;
 let cashInRegister: number = 100;
 let nextOrderId: number = 1;
+
+const menu: Pizza[] = [
+  { id: nextPizzaId++, name : "Margherita", price: 8 },
+  { id: nextPizzaId++, name : "Salmon", price: 15 },
+  { id: nextPizzaId++, name : "4 Cheeses", price: 14 },
+  { id: nextPizzaId++, name : "Oriental", price: 13 },
+  { id: nextPizzaId++, name : "Parisian", price: 10 },
+]
+
 const orderQueue: Order[] = [];
 
 function addNewPizza(pizza: Pizza) {
-  menu.push(pizza);
+  pizza.id = nextPizzaId++;
+  menu.unshift(pizza);
 }
 
 function placeOrder(pizzaName: string) : Order | undefined { // added return type for clarity
@@ -58,12 +61,9 @@ function getPizzaDetail(identifier: number | string) : Pizza | undefined {
   }
 }
 
-addNewPizza({ id: 6, name: "Chicken Bacon Ranch", price: 12 })
-addNewPizza({ id: 7, name: "Hawaiian", price: 12 })
-addNewPizza({ id: 8, name: "Spicy Sausage", price: 11 })
-
-placeOrder("Chicken Bacon Ranch")
-completeOrder(1)
+addNewPizza({ name: "Chicken Bacon Ranch", price: 12 })
+addNewPizza({ name: "Queen", price: 13 })
+// completeOrder(1)
 
 console.log("Menu:", menu)
 console.log("Cash in register:", cashInRegister)
