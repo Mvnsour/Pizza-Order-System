@@ -10,9 +10,14 @@ const menu = [
 ];
 const orderQueue = [];
 function addNewPizza(pizza) {
-    pizza.id = nextPizzaId++;
-    menu.unshift(pizza);
+    const newPizza = Object.assign({ 
+        // and assign a new id to the pizza object
+        id: nextPizzaId++ }, pizza);
+    menu.push(newPizza);
+    return newPizza; // Return the new pizza object
 }
+addNewPizza({ name: "Chicken Bacon Ranch", price: 12 });
+addNewPizza({ name: "Queen", price: 13 });
 function placeOrder(pizzaName) {
     const selectedPizza = menu.find(pizza => pizza.name === pizzaName);
     if (!selectedPizza) {
@@ -44,39 +49,21 @@ function getPizzaDetail(identifier) {
         throw new TypeError(`${identifier} must be a number or a string`);
     }
 }
-addNewPizza({ name: "Chicken Bacon Ranch", price: 12 });
-addNewPizza({ name: "Queen", price: 13 });
 // completeOrder(1)
 console.log("Menu:", menu);
 console.log("Cash in register:", cashInRegister);
 console.log("Order queue:", orderQueue);
-let id = 1;
+let userId = 1;
 const users = [{
-        id: id,
+        userId: userId++,
         username: "marcus",
         role: "admin"
     }, {
-        id: id++,
+        userId: userId++,
         username: "tim",
         role: "user"
     }, {
-        id: id++,
+        userId: userId++,
         username: "tom",
         role: "guest"
     }];
-function updateUser(id, updates) {
-    const foundUser = users.find(user => user.id === id);
-    if (!foundUser) {
-        console.error("User not found");
-        return;
-    }
-    Object.assign(foundUser, updates);
-}
-updateUser(id++, { username: "Ibrahim" });
-updateUser(id++, { role: "admin" });
-console.log("Users after update:", users);
-function addUser(user) {
-    users.push(user);
-}
-addUser({ id: id++, username: "newUser", role: "user" });
-console.log("Users before adding new user:", users);
