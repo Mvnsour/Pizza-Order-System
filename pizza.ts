@@ -34,8 +34,8 @@ function addNewPizza(pizza: Omit<Pizza, "id">): Pizza {
   return newPizza; // Return the new pizza object
 }
 
-addNewPizza({ name: "Chicken Bacon Ranch", price: 12 })
-addNewPizza({ name: "Queen", price: 13 })
+addNewPizza({ name: "Chicken", price: 12 });
+addNewPizza({ name: "Queen", price: 13 });
 
 function placeOrder(pizzaName: string) : Order | undefined { // added return type for clarity
   const selectedPizza = menu.find(pizza => pizza.name === pizzaName);
@@ -46,16 +46,21 @@ function placeOrder(pizzaName: string) : Order | undefined { // added return typ
   cashInRegister+= selectedPizza.price;
   const newOrder: Order = { id: nextOrderId++ ,pizza: selectedPizza, status: "ordered" };
   orderQueue.push(newOrder);
-  return newOrder
+  return newOrder;
 }
 
 function addToArray<T>(array: T[], item: T): T[] {
-    array.push(item)
-    return array
+    array.push(item);
+    return array;
 }
+// Example usage
+addToArray(menu, {id: nextPizzaId++, name: "4 Seasons", price: 12 });
+addToArray(orderQueue, { id: nextOrderId++, pizza: menu[4], status: "completed" });
+addToArray(orderQueue, { id: nextOrderId++, pizza: menu[5], status: "completed" });
+addToArray(orderQueue, { id: nextOrderId++, pizza: menu[menu.length - 1], status: "ordered" });
 
-console.log(menu)
-console.log(orderQueue)
+console.log(menu);
+console.log(orderQueue);
 
 function completeOrder(orderId: number) : Order | undefined {
   const order = orderQueue.find(order => order.id === orderId);
@@ -76,7 +81,3 @@ function getPizzaDetail(identifier: number | string) : Pizza | undefined {
     throw new TypeError(`${identifier} must be a number or a string`);
   }
 }
-
-console.log("Menu:", menu)
-console.log("Cash in register:", cashInRegister)
-console.log("Order queue:", orderQueue)

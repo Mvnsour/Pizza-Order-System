@@ -16,7 +16,7 @@ function addNewPizza(pizza) {
     menu.push(newPizza);
     return newPizza; // Return the new pizza object
 }
-addNewPizza({ name: "Chicken Bacon Ranch", price: 12 });
+addNewPizza({ name: "Chicken", price: 12 });
 addNewPizza({ name: "Queen", price: 13 });
 function placeOrder(pizzaName) {
     const selectedPizza = menu.find(pizza => pizza.name === pizzaName);
@@ -33,6 +33,11 @@ function addToArray(array, item) {
     array.push(item);
     return array;
 }
+// Example usage
+addToArray(menu, { id: nextPizzaId++, name: "4 Seasons", price: 12 });
+addToArray(orderQueue, { id: nextOrderId++, pizza: menu[4], status: "completed" });
+addToArray(orderQueue, { id: nextOrderId++, pizza: menu[5], status: "completed" });
+addToArray(orderQueue, { id: nextOrderId++, pizza: menu[menu.length - 1], status: "ordered" });
 console.log(menu);
 console.log(orderQueue);
 function completeOrder(orderId) {
@@ -55,6 +60,3 @@ function getPizzaDetail(identifier) {
         throw new TypeError(`${identifier} must be a number or a string`);
     }
 }
-console.log("Menu:", menu);
-console.log("Cash in register:", cashInRegister);
-console.log("Order queue:", orderQueue);
