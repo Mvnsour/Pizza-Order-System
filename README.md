@@ -1,6 +1,6 @@
 # FR
 
-## TypeScript Pizza Order System
+## Système de commande d'une pizzeria
 Bienvenue dans ce projet de découverte de TypeScript à travers le développement d'une application simple de gestion de commandes pour une pizzeria.
 
 ### Objectif du Projet
@@ -42,7 +42,7 @@ Ce projet a été réalisé dans le cadre du cours interactif *“Learn TypeScri
 
 # EN
 
-## TypeScript Pizza Order System
+## Pizza Order System
 Welcome to this introductory TypeScript project, built around the development of a simple pizza order management application.
 
 ### Project purpose
