@@ -49,15 +49,16 @@ function placeOrder(pizzaName: string) : Order | undefined { // added return typ
   return newOrder;
 }
 
-function addToArray<T>(array: T[], item: T): T[] {
+function addToArray<T>(array: T[], item: T): T[] { // Generic function to add an item to an array
     array.push(item);
     return array;
 }
+
 // Example usage
-addToArray(menu, {id: nextPizzaId++, name: "4 Seasons", price: 12 });
-addToArray(orderQueue, { id: nextOrderId++, pizza: menu[4], status: "completed" });
-addToArray(orderQueue, { id: nextOrderId++, pizza: menu[5], status: "completed" });
-addToArray(orderQueue, { id: nextOrderId++, pizza: menu[menu.length - 1], status: "ordered" });
+addToArray<Pizza>(menu, {id: nextPizzaId++, name: "4 Seasons", price: 12 });
+addToArray<Order>(orderQueue, { id: nextOrderId++, pizza: menu[4], status: "completed" });
+addToArray<Order>(orderQueue, { id: nextOrderId++, pizza: menu[5], status: "completed" });
+addToArray<Order>(orderQueue, { id: nextOrderId++, pizza: menu[menu.length - 1], status: "ordered" });
 
 console.log(menu);
 console.log(orderQueue);
