@@ -29,6 +29,12 @@ function placeOrder(pizzaName) {
     orderQueue.push(newOrder);
     return newOrder;
 }
+function addToArray(array, item) {
+    array.push(item);
+    return array;
+}
+console.log(menu);
+console.log(orderQueue);
 function completeOrder(orderId) {
     const order = orderQueue.find(order => order.id === orderId);
     if (!order) {
@@ -49,21 +55,6 @@ function getPizzaDetail(identifier) {
         throw new TypeError(`${identifier} must be a number or a string`);
     }
 }
-// completeOrder(1)
 console.log("Menu:", menu);
 console.log("Cash in register:", cashInRegister);
 console.log("Order queue:", orderQueue);
-let userId = 1;
-const users = [{
-        userId: userId++,
-        username: "marcus",
-        role: "admin"
-    }, {
-        userId: userId++,
-        username: "tim",
-        role: "user"
-    }, {
-        userId: userId++,
-        username: "tom",
-        role: "guest"
-    }];
