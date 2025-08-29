@@ -1,45 +1,3 @@
-# FR
-
-## Système de commande d'une pizzeria
-Bienvenue dans ce projet de découverte de TypeScript à travers le développement d'une application simple de gestion de commandes pour une pizzeria.
-
-### Objectif du Projet
-Ce projet a été réalisé dans le cadre d’un cours d’introduction à TypeScript. Il vise à illustrer les concepts fondamentaux du langage par une approche pratique et concrète. Le but est de montrer comment TypeScript améliore la fiabilité, la maintenabilité et la sécurité du code JavaScript.
-
-### Concepts abordés
-Au fil du projet, vous explorerez les notions suivantes :
-- Types de base (`number`, `string`, `boolean`, etc.)
-- Types littéraux et unions
-- Types personnalisés (`type`, `interface`)
-- Tableaux typés et objets imbriqués
-- Propriétés optionnelles
-- Rétrécissement des types (type narrowing)
-- Types utilitaires (`Partial`, `Omit`)
-- Types génériques
-- Gestion des types `void`, `any` et fonctions typées
-
-### Objectifs pédagogiques
-À l’issue de ce projet, vous saurez :
-- Structurer et typer des données comme Pizza, Order, ou Toppings.
-- Définir des types personnalisés réutilisables.
-- Manipuler des types complexes avec confiance.
-- Améliorer la robustesse de vos fonctions à l’aide des annotations de retour.
-- Appliquer les types utilitaires pour gagner en flexibilité.
-- Déboguer plus facilement grâce au typage statique.
-
-### Compilation
-Une fois le code TypeScript écrit, on peut le compiler en JavaScript à l'aide de la commande suivante :
-```bash
-npx tsc pizza.ts
-```
-On peut également personnaliser la version JavaScript générée en utilisant l’option `--target`. Par exemple, pour compiler le code en ciblant ECMAScript 6 :
-```bash
-npx tsc pizza.ts --target es6
-```
-
-### À propos
-Ce projet a été réalisé dans le cadre du cours interactif *“Learn TypeScript”* proposé par [Scrimba](https://scrimba.com/), une plateforme d’apprentissage en ligne axée sur la pratique.
-
 # EN
 
 ## Pizza Order System
@@ -81,3 +39,46 @@ npx tsc my-file.ts --target es6
 
 ### About 
 This project was created as part of the interactive course *“Learn TypeScript”* offered by [Scrimba](https://scrimba.com/), an online learning platform focused on hands-on practice.
+
+
+# FR
+
+## Système de commande d'une pizzeria
+Bienvenue dans ce projet de découverte de TypeScript à travers le développement d'une application simple de gestion de commandes pour une pizzeria.
+
+### Objectif du Projet
+Ce projet a été réalisé dans le cadre d’un cours d’introduction à TypeScript. Il vise à illustrer les concepts fondamentaux du langage par une approche pratique et concrète. Le but est de montrer comment TypeScript améliore la fiabilité, la maintenabilité et la sécurité du code JavaScript.
+
+### Concepts abordés
+Au fil du projet, vous explorerez les notions suivantes :
+- Types de base (`number`, `string`, `boolean`, etc.)
+- Types littéraux et unions
+- Types personnalisés (`type`, `interface`)
+- Tableaux typés et objets imbriqués
+- Propriétés optionnelles
+- Rétrécissement des types (type narrowing)
+- Types utilitaires (`Partial`, `Omit`)
+- Types génériques
+- Gestion des types `void`, `any` et fonctions typées
+
+### Objectifs pédagogiques
+À l’issue de ce projet, vous saurez :
+- Structurer et typer des données comme Pizza, Order, ou Toppings.
+- Définir des types personnalisés réutilisables.
+- Manipuler des types complexes avec confiance.
+- Améliorer la robustesse de vos fonctions à l’aide des annotations de retour.
+- Appliquer les types utilitaires pour gagner en flexibilité.
+- Déboguer plus facilement grâce au typage statique.
+
+### Compilation
+Une fois le code TypeScript écrit, on peut le compiler en JavaScript à l'aide de la commande suivante :
+```bash
+npx tsc pizza.ts
+```
+On peut également personnaliser la version JavaScript générée en utilisant l’option `--target`. Par exemple, pour compiler le code en ciblant ECMAScript 6 :
+```bash
+npx tsc pizza.ts --target es6
+```
+
+### À propos
+Ce projet a été réalisé dans le cadre du cours interactif *“Learn TypeScript”* proposé par [Scrimba](https://scrimba.com/), une plateforme d’apprentissage en ligne axée sur la pratique.
